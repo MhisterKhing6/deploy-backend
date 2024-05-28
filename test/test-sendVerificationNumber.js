@@ -6,7 +6,7 @@ import { fileServer } from "../server.js";
 import sha1 from "sha1"
 import { VerifTokenModel } from "../models/verifyToken.js";
 
-describe("Verify user through email",  () => {
+describe("sending user verification code",  () => {
 let unverifiedCustomer = {"name": "text2", "password": "text3333", "email": "unveritext32@gmail.com", "type": "customer"}
 let passwordHash = sha1(unverifiedCustomer.password)
 let user = null

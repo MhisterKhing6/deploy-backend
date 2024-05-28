@@ -1,16 +1,15 @@
-import {Model, Schema } from "mongoose";
+import {model, Schema } from "mongoose";
 const FileSchema = new Schema({
-    title:     {type: String, required:true, unique},
-    downloads: {type:String, required:true},
-    emailSent: {type:String, required: true},
+    title:     {type: String, required:true, unique:true},
+    description:   {type: String, required:true},
+    downloads: {type: Number, default: 0},
+    emailSent: {type:Number, default: 0},
     filePath:  {type:String, required:true},
-    fileName:  {type:String, required:true},
-    extension: {type:String, required:true},
     updatedAt: {type:Date, default:Date.now},
-    uploaded_by:{type:String, required:true}//fk to users
+    uploadedBy:{type:String, required:true}//fk to users
 
 })
 
 //create a model
-let FileModel = Model("File", FileSchema)
+let FileModel = model("File", FileSchema)
 export {FileModel}

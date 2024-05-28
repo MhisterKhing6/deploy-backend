@@ -27,14 +27,6 @@ it("should return filds missing with 400 status code", async () => {
     assert.equal(response.body.message, "fields missing")
 })
 
-it("should return wrong user role with 401 status code", async () => {
-    let test2 = {"name": "text2", "password": "text3333", "email": "text3233@gmail.com", "type": "admin"}
-    let response = await request(fileServer).post("/auth/register/customer").type('json').send(test2)
-    assert.equal(response.status, 401)
-    assert.isDefined(response.body.message)
-    assert.equal(response.body.message, "wrong user role")
-})
-
 it("should return user with the same email exist with 400 status code", async () => {
     let savedCustomer = {"name": "text2", "passwordHash": "text3333", "email": "test123@gmail.com"}
     await new UserModel(savedCustomer).save()

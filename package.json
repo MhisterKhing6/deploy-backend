@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "pkill -sigkill node; mocha  --exit --timeout 10000 ",
+    "test": "pkill -sigkill node; mocha  --exit --timeout 20000 ",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },

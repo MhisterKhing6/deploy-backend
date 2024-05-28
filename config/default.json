@@ -1,16 +1,17 @@
 {
     "host": {
-        "port":8000,
-        "ip": "localhost"
+        "port":8000
     },
-    "db": {
-        "connectionString": "mongodb+srv://autoccoder:mtZ90Ud5hX04X4H4@cluster0.lguajgx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-    },
+    "MONGO_URI": "mongodb+srv://autoccoder:mtZ90Ud5hX04X4H4@cluster0.lguajgx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     "token": {
-        "secreteKey": "9ei?I@sekrdosi#$#2kosik!skK"
+        "secreteKey": "9ei?I@sekrdosi#$#2kosik!skK",
+        "downloadSecreteKey": "kreklksl43"
     },
     "email": {
         "email": "autocodegrader75@gmail.com",
         "secrete": "okuiugeaouthupzv"
+    },
+    "files": {
+        "maxSize":"100mb"
     }
 }

@@ -30,7 +30,7 @@ transporter.use('compile', hbs(handlebarOptions))
 
 const sendEmailVerification  = async (user, secreteText) => {
     /**
-     * sendEmailVerification : sends email to user with secrete text
+     * sendEmailVerification : sends email to user with verificaiton code
      * @param {object} user: object containing user name and email
      * @param {string} secreteText: secret test to send
      * @return {object | null} if message is sent successfully
@@ -54,6 +54,12 @@ const sendEmailVerification  = async (user, secreteText) => {
 }
 
 const sendResetPassword  = async (user, secreteText) => {
+   /**
+     * sendEmailVerification : sends email to user with secrete text
+     * @param {object} user: object containing user name and email
+     * @param {string} secreteText: secret test to send
+     * @return {object | null} if message is sent successfully
+     */
   const mailOptions = {
     from: `"Reset" <${configuration.email.email}>`, // sender address
     template: "password", // the name of the template file, i.e., email.handlebars
@@ -71,7 +77,32 @@ const sendResetPassword  = async (user, secreteText) => {
   }
 }
 
+const emailAttachment  = async (user,toEmail,file, desc) => {
+  /**
+   * sends email to users with file as attachement
+   * user: user object sending the email
+   * toEmail: email of the receiver
+   * file: to send as attachment
+   * desc: description of a file
+   */
+  const mailOptions = {
+    from: `"Email" <${user.email}>`, // sender address
+    template: "attachment", // the name of the template file, i.e., email.handlebars
+    to: toEmail,
+    subject: `File To Send`,
+    context: {
+      name: user.name,
+      desc
+    },attachments : file
+  };
+  try {
+    return  await transporter.sendMail(mailOptions)
+  } catch(err) {
+    console.log(`${err} \n sending email ${user.name} ${user.email}`)
+  }
+}
 
-export {sendEmailVerification, sendResetPassword}
+
+export {sendEmailVerification, sendResetPassword, emailAttachment}
 
   

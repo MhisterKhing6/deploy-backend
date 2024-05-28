@@ -9,7 +9,7 @@ const connectDb = async () => {
      * returns: exit program execution if failed to connect else nothing otherwise
      */
     try {
-        await mongoose.connect(configuration.db.connectionString, {autoIndex:true})
+        await mongoose.connect(configuration.MONGO_URI, {autoIndex:true})
         console.log("connected to database")
     } catch(err){
         console.log(err)
