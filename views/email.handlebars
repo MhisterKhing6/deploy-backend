@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Welcome Email</title>
+  <style>
+        body {
+            background-color: rgb(14, 14, 1);
+            color: white;
+            font-size: 20px;
+            line-height: 1.5rem;
+        }
+        .head {
+            
+            width: 100%;
+            flex-direction: column;
+            color: white;
+            padding-top: 20px;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+        }
+        .center {
+           height: 100px;
+           width: 400px;
+        }
+        .verify-button {
+          height: 50px;
+          background-color: rgb(214, 191, 124);
+          color: black;
+          text-align: center;
+          border-radius: 5px;
+          border: 1px solid white;
+          font-size: 2rem;
+          display: block;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .line  {
+          color: white;
+          width: 100%;
+          font-weight: bold;
+        }
+        .intro {
+          padding: 10px;
+          box-shadow: 2;
+          min-height: 70vh;
+        }
+        footer {
+          min-height: 10vh;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+        }
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+  </style>
+</head>
+<body>
+  
+    <h1 class="center">Verify your Email</h1>
+    <hr />
+
+    <div class="intro">
+      <br> <h1 > Dear {{name}}, </h1>
+
+          Thank you for registering with us! We're excited to have you as a part of our community.
+
+          To ensure the security of your account and provide you with the best experience, 
+          we kindly ask you to verify your email address. Verifying your email helps us confirm your identity 
+          and enables us to keep you updated  account-related information and important notifications such as new assignment, assignment deadlines etc <br /> <br />
+
+          <h2>Please below is your verification code: </h2> <br />
+          <h1 class="">{{secreteText}} </h1>
+          <br />
+          <br />
+          If the link above doesn't work, you can copy and paste the following URL into your browser: <br />
+          {{url}} <br /> <br />
+
+        Thank you for your cooperation.</p>
+    </div>
+    
+</body>
+</html> 
