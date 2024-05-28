@@ -22,7 +22,8 @@ fileServer.get("/", (req, res) => {
     return res.send("ok i am working")
 })
 
-fileServer.listen(configuration.host.port,configuration.host.ip, () => {
+const Port = process.env.PORT || 5000
+fileServer.listen(Port, () => {
     console.log(`app is listening at http://${configuration.host.ip}:${configuration.host.port}`)
 })
 
