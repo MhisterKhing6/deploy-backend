@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { UserController } from "../controllers/userController.js";
-import { AdminController } from "../controllers/adminController.js";
 //routes that doesnt involves user verfications
 
 const nonAuthRoute = Router()
@@ -20,7 +19,6 @@ nonAuthRoute.post("/register/customer", UserController.register)
  */
 nonAuthRoute.post("/login/user", UserController.login)
 export {nonAuthRoute}
-
 
 
 /**
@@ -73,13 +71,3 @@ nonAuthRoute.post("/user/check/verification", UserController.verify)
  * domain:public
  */
 nonAuthRoute.post("/user/update-password", UserController.updatePassword)
-
-
-//private
-
-/**
- * register admin to the server
- * method: get
- * domain: private
- */
-nonAuthRoute.post("/register/admin", AdminController.register)
